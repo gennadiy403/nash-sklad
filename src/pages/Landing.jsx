@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+const EARLY_BIRD_LIMIT = 500
+const EARLY_BIRD_TAKEN = 213 // обновляй по мере роста
+
+const EARLY_BIRD_PERKS = [
+  { emoji: '🎁', title: '6 месяцев бесплатно', desc: 'Полный доступ ко всем функциям без оплаты — сразу после запуска.' },
+  { emoji: '💎', title: 'Цена заморожена навсегда', desc: 'Тариф на старте — твой на всё время. Даже когда поднимем цены.' },
+  { emoji: '🎙️', title: 'Влияешь на продукт', desc: 'Прямой доступ к команде. Твои хотелки идут в приоритет.' },
+  { emoji: '⚡', title: 'Ранний доступ к бете', desc: 'Попадёшь в продукт первым — до публичного запуска.' },
+]
+
 const FEATURES = [
   { emoji: '⚡', title: 'Реалтайм остатки', desc: 'Все склады и маркетплейсы в одном экране. Без обновления страницы.' },
   { emoji: '🧠', title: 'Умное прогнозирование', desc: 'Система сама скажет что и когда заказывать — до того как закончится.' },
@@ -131,8 +141,55 @@ export default function Landing() {
         )}
 
         <p className="text-xs text-muted mt-4">
-          Уже записались <span className="text-white font-semibold">{count} продавцов</span> · Без спама, только важное
+          Уже записались <span className="text-white font-semibold">{count} продавцов</span> · 6 месяцев бесплатно · Без спама
         </p>
+      </section>
+
+      {/* Early Bird */}
+      <section className="px-6 py-16 max-w-4xl mx-auto">
+        <div className="bg-surface border border-accent/30 rounded-3xl p-8 relative overflow-hidden">
+          {/* Glow background */}
+          <div className="absolute inset-0 bg-accent-glow rounded-3xl pointer-events-none" />
+
+          <div className="relative">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+              <div>
+                <div className="inline-flex items-center gap-1.5 bg-accent/20 text-accent text-xs font-bold px-3 py-1 rounded-full mb-3">
+                  🔥 Только первые {EARLY_BIRD_LIMIT} человек
+                </div>
+                <h2 className="text-2xl font-bold text-white">Плюшки ранних пользователей</h2>
+                <p className="text-muted text-sm mt-1">Записался сейчас — получаешь всё это при запуске</p>
+              </div>
+
+              {/* Progress bar spots */}
+              <div className="sm:text-right shrink-0">
+                <div className="text-3xl font-black text-white">{EARLY_BIRD_TAKEN}</div>
+                <div className="text-xs text-muted">из {EARLY_BIRD_LIMIT} мест занято</div>
+                <div className="mt-2 w-40 h-1.5 bg-border rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-accent rounded-full"
+                    style={{ width: `${(EARLY_BIRD_TAKEN / EARLY_BIRD_LIMIT) * 100}%` }}
+                  />
+                </div>
+                <div className="text-xs text-accent font-medium mt-1">
+                  Осталось {EARLY_BIRD_LIMIT - EARLY_BIRD_TAKEN} мест
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {EARLY_BIRD_PERKS.map((perk, i) => (
+                <div key={i} className="flex gap-3 bg-bg/60 rounded-2xl p-4 border border-border">
+                  <span className="text-2xl shrink-0">{perk.emoji}</span>
+                  <div>
+                    <div className="font-semibold text-white text-sm">{perk.title}</div>
+                    <div className="text-xs text-muted mt-0.5 leading-relaxed">{perk.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* МойСклад vs НашСклад */}
