@@ -1,62 +1,58 @@
 /**
- * НашСклад — Google Apps Script для записи ответов анкеты в Google Sheets
+ * НашСклад — Google Apps Script
+ * Принимает два типа данных:
+ *   type: 'waitlist' — подписчик с лендинга
+ *   type: 'survey'  — заполненная анкета
  *
- * Как настроить:
- * 1. Создайте новую Google Таблицу
- * 2. Откройте Расширения → Apps Script
- * 3. Вставьте этот код, сохраните
- * 4. Нажмите "Развернуть" → "Новое развертывание" → тип "Веб-приложение"
+ * Настройка:
+ * 1. Создайте Google Таблицу с двумя листами: "Waitlist" и "Survey"
+ * 2. Расширения → Apps Script → вставьте этот код
+ * 3. Развернуть → Новое развертывание → Веб-приложение
  *    - Запуск от имени: Я
  *    - Доступ: Все
- * 5. Скопируйте URL и добавьте в .env как VITE_SHEETS_WEBHOOK_URL
+ * 4. URL добавьте в .env как VITE_SHEETS_WEBHOOK_URL
  */
 
 function doPost(e) {
   try {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    const ss = SpreadsheetApp.getActiveSpreadsheet()
+    const data = JSON.parse(e.postData.contents)
 
-    // Добавить заголовки если таблица пустая
-    if (sheet.getLastRow() === 0) {
+    if (data.type === 'waitlist') {
+      const sheet = ss.getSheetByName('Waitlist') || ss.insertSheet('Waitlist')
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow(['Дата', 'Контакт'])
+        sheet.getRange(1, 1, 1, 2).setFontWeight('bold')
+      }
+      sheet.appendRow([new Date().toLocaleString('ru-RU'), data.contact])
+
+    } else {
+      // survey (default)
+      const sheet = ss.getSheetByName('Survey') || ss.insertSheet('Survey')
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow(['Дата', 'SKU', 'Маркетплейсы', 'Боли', 'Оценка боли', 'Желания', 'Имя', 'Контакт', 'Созвон'])
+        sheet.getRange(1, 1, 1, 9).setFontWeight('bold')
+      }
       sheet.appendRow([
-        'Дата',
-        'Кол-во SKU',
-        'Маркетплейсы',
-        'Боли',
-        'Оценка боли (1-10)',
-        'Желания',
-        'Имя',
-        'Контакт',
-        'Готов созвониться',
-      ]);
+        new Date().toLocaleString('ru-RU'),
+        data.skuCount || '',
+        data.platforms || '',
+        data.pains || '',
+        data.painScore || '',
+        data.wishes || '',
+        data.name || '',
+        data.contact || '',
+        data.callReady ? 'Да' : 'Нет',
+      ])
     }
-
-    const data = JSON.parse(e.postData.contents);
-
-    sheet.appendRow([
-      new Date().toLocaleString('ru-RU'),
-      data.skuCount || '',
-      data.platforms || '',
-      data.pains || '',
-      data.painScore || '',
-      data.wishes || '',
-      data.name || '',
-      data.contact || '',
-      data.callReady ? 'Да' : 'Нет',
-    ]);
 
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'ok' }))
-      .setMimeType(ContentService.MimeType.JSON);
+      .setMimeType(ContentService.MimeType.JSON)
 
   } catch (err) {
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
+      .setMimeType(ContentService.MimeType.JSON)
   }
-}
-
-// Тест — можно запустить вручную из редактора
-function testSheet() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.appendRow([new Date(), 'test', 'wb, ozon', 'ui, slow', 8, 'simple_ui', 'Test', '@test', 'Да']);
 }
