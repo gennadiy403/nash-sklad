@@ -223,6 +223,13 @@ export default function Marketplace() {
               </div>
             </div>
             <div className="bg-[#0f0f13] p-3 flex-1">
+              {/* Табы: Сводка / Потоварно */}
+              <div className="flex items-center gap-0 mb-3 border-b border-border">
+                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Сводка</span>
+                <span className="text-[8px] text-white px-3 py-1.5 border-b-2 border-accent font-medium">Потоварно</span>
+                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">По МП</span>
+                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Динамика</span>
+              </div>
               <div className="grid grid-cols-4 gap-1.5 mb-3">
                 <div className="bg-surface rounded-lg p-2 border border-border">
                   <div className="text-[8px] text-muted mb-0.5">Выручка</div>
