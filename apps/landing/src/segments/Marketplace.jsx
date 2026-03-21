@@ -130,7 +130,7 @@ export default function Marketplace() {
           {PAINS.map((p, i) => (
             <div key={i} className="bg-surface border border-border rounded-2xl p-5">
               <div className="text-2xl mb-3">{p.icon}</div>
-              <div className="text-xs text-muted line-through mb-2">{p.pain}</div>
+              <div className="text-sm text-red-400/70 line-through mb-2">{p.pain}</div>
               <div className="text-sm font-semibold text-white flex items-center gap-1.5">
                 <span className="text-accent">✓</span> {p.fix}
               </div>

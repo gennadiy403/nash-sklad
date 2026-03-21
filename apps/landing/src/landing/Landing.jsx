@@ -208,7 +208,7 @@ export default function Landing() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {COMPARE.map((item, i) => (
             <div key={i} className="bg-surface border border-border rounded-2xl p-5">
-              <div className="text-xs text-muted line-through mb-2">{item.them}</div>
+              <div className="text-sm text-red-400/70 line-through mb-2">{item.them}</div>
               <div className="text-sm font-semibold text-white flex items-center gap-1.5">
                 <span className="text-accent">✓</span> {item.us}
               </div>
