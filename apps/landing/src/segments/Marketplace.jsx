@@ -225,8 +225,8 @@ export default function Marketplace() {
             <div className="bg-[#0f0f13] p-3 flex-1">
               {/* Табы: Сводка / Потоварно */}
               <div className="flex items-center gap-0 mb-3 border-b border-border">
-                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Сводка</span>
-                <span className="text-[8px] text-white px-3 py-1.5 border-b-2 border-accent font-medium">Потоварно</span>
+                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">По заказам</span>
+                <span className="text-[8px] text-white px-3 py-1.5 border-b-2 border-accent font-medium">По товарам</span>
                 <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">По каналам</span>
                 <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Динамика</span>
               </div>
@@ -271,7 +271,7 @@ export default function Marketplace() {
                     { name: 'Худи базовое', mp: 'Ozon', mpColor: 'text-blue-400', sales: 98, rev: '64 200', margin: '35%', mColor: 'text-green-400', profit: '22 400' },
                     { name: 'Брюки карго', mp: 'Сайт', mpColor: 'text-emerald-400', sales: 76, rev: '45 600', margin: '51%', mColor: 'text-green-400', profit: '23 200' },
                     { name: 'Шорты льняные', mp: 'ЯМ', mpColor: 'text-yellow-400', sales: 54, rev: '32 400', margin: '28%', mColor: 'text-yellow-400', profit: '9 100' },
-                    { name: 'Кепка бейсболка', mp: 'Успех', mpColor: 'text-orange-400', sales: 89, rev: '26 700', margin: '48%', mColor: 'text-green-400', profit: '12 800' },
+                    { name: 'Кепка бейсболка', mp: 'Шоурум', mpColor: 'text-orange-400', sales: 89, rev: '26 700', margin: '48%', mColor: 'text-green-400', profit: '12 800' },
                     { name: 'Носки набор 5шт', mp: 'WB', mpColor: 'text-purple-400', sales: 234, rev: '16 400', margin: '18%', mColor: 'text-red-400', profit: '2 950' },
                     { name: 'Рубашка лён', mp: 'Ozon', mpColor: 'text-blue-400', sales: 31, rev: '9 800', margin: '33%', mColor: 'text-green-400', profit: '3 230' },
                   ].map((row, i) => (
