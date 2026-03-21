@@ -147,7 +147,7 @@ export default function Marketplace() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Старый UI — заполненный */}
           <div className="rounded-2xl overflow-hidden border border-red-900/30 flex flex-col">
-            <div className="bg-gradient-to-b from-[#5a8db8] to-[#3b6fa0] px-2 py-1.5 flex items-end gap-0.5 overflow-hidden">
+            <div className="bg-[#036ce5] px-2 py-1.5 flex items-end gap-0.5 overflow-hidden">
               {['Показатели','Закупки','Продажи','Товары','Контрагенты','Склад','Деньги','Розница','Онлайн','Произв.','Задачи'].map((t, i) => (
                 <div key={t} className={`flex flex-col items-center px-1 py-0.5 rounded-t ${i === 2 ? 'bg-white/20' : ''}`}>
                   <span className="text-[7px] text-white/80 whitespace-nowrap">{t}</span>
@@ -212,7 +212,7 @@ export default function Marketplace() {
                 <div className="w-5 h-5 rounded bg-accent/80 flex items-center justify-center">
                   <span className="text-[8px] font-black text-white">ОБ</span>
                 </div>
-                <span className="text-[11px] font-semibold text-white">Продажи</span>
+                <span className="text-[11px] font-semibold text-white">Заказы</span>
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[7px] text-muted bg-surface px-1.5 py-0.5 rounded">Вчера</span>
@@ -227,7 +227,7 @@ export default function Marketplace() {
               <div className="flex items-center gap-0 mb-3 border-b border-border">
                 <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Сводка</span>
                 <span className="text-[8px] text-white px-3 py-1.5 border-b-2 border-accent font-medium">Потоварно</span>
-                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">По МП</span>
+                <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">По каналам</span>
                 <span className="text-[8px] text-muted px-3 py-1.5 border-b border-transparent">Динамика</span>
               </div>
               <div className="grid grid-cols-4 gap-1.5 mb-3">
@@ -258,7 +258,7 @@ export default function Marketplace() {
                 <thead>
                   <tr className="border-b border-border">
                     <th className="text-left py-1.5 text-[7px] text-muted font-medium">Товар</th>
-                    <th className="text-left py-1.5 text-[7px] text-muted font-medium">МП</th>
+                    <th className="text-left py-1.5 text-[7px] text-muted font-medium">Канал</th>
                     <th className="text-right py-1.5 text-[7px] text-muted font-medium">Продаж</th>
                     <th className="text-right py-1.5 text-[7px] text-muted font-medium">Выручка</th>
                     <th className="text-right py-1.5 text-[7px] text-muted font-medium">Маржа</th>
@@ -269,11 +269,11 @@ export default function Marketplace() {
                   {[
                     { name: 'Футболка оверсайз', mp: 'WB', mpColor: 'text-purple-400', sales: 142, rev: '89 400', margin: '42%', mColor: 'text-green-400', profit: '37 500' },
                     { name: 'Худи базовое', mp: 'Ozon', mpColor: 'text-blue-400', sales: 98, rev: '64 200', margin: '35%', mColor: 'text-green-400', profit: '22 400' },
-                    { name: 'Брюки карго', mp: 'WB', mpColor: 'text-purple-400', sales: 76, rev: '45 600', margin: '41%', mColor: 'text-green-400', profit: '18 700' },
+                    { name: 'Брюки карго', mp: 'Сайт', mpColor: 'text-emerald-400', sales: 76, rev: '45 600', margin: '51%', mColor: 'text-green-400', profit: '23 200' },
                     { name: 'Шорты льняные', mp: 'ЯМ', mpColor: 'text-yellow-400', sales: 54, rev: '32 400', margin: '28%', mColor: 'text-yellow-400', profit: '9 100' },
-                    { name: 'Кепка бейсболка', mp: 'Ozon', mpColor: 'text-blue-400', sales: 89, rev: '26 700', margin: '52%', mColor: 'text-green-400', profit: '13 900' },
+                    { name: 'Кепка бейсболка', mp: 'Успех', mpColor: 'text-orange-400', sales: 89, rev: '26 700', margin: '48%', mColor: 'text-green-400', profit: '12 800' },
                     { name: 'Носки набор 5шт', mp: 'WB', mpColor: 'text-purple-400', sales: 234, rev: '16 400', margin: '18%', mColor: 'text-red-400', profit: '2 950' },
-                    { name: 'Рубашка лён', mp: 'ЯМ', mpColor: 'text-yellow-400', sales: 31, rev: '9 800', margin: '33%', mColor: 'text-green-400', profit: '3 230' },
+                    { name: 'Рубашка лён', mp: 'Ozon', mpColor: 'text-blue-400', sales: 31, rev: '9 800', margin: '33%', mColor: 'text-green-400', profit: '3 230' },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-border/50 hover:bg-surface/50">
                       <td className="py-1.5 text-white">{row.name}</td>
