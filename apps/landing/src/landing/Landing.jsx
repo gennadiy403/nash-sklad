@@ -101,7 +101,7 @@ export default function Landing() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-black leading-tight mb-5">
-          Не учёт товаров.<br />
+          Не просто учёт товаров.<br />
           <span className="text-accent">Управление бизнесом.</span>
         </h1>
 
