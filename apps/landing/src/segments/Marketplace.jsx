@@ -230,7 +230,7 @@ export default function Marketplace() {
             </div>
             <div className="bg-[#0f0f13] p-4">
               {/* Карточки метрик */}
-              <div className="grid grid-cols-3 gap-2 mb-4">
+              <div className="grid grid-cols-4 gap-2 mb-4">
                 <div className="bg-surface rounded-lg p-2.5 border border-border">
                   <div className="text-[9px] text-muted mb-1">Выручка</div>
                   <div className="text-sm font-bold text-white">284 500 ₽</div>
@@ -243,9 +243,19 @@ export default function Marketplace() {
                 </div>
                 <div className="bg-surface rounded-lg p-2.5 border border-border">
                   <div className="text-[9px] text-muted mb-1">Заказов</div>
-                  <div className="text-sm font-bold text-white">47</div>
-                  <div className="text-[9px] text-muted">за месяц</div>
+                  <div className="text-sm font-bold text-white">437</div>
+                  <div className="text-[9px] text-green-400">↑ 8%</div>
                 </div>
+                <div className="bg-surface rounded-lg p-2.5 border border-border">
+                  <div className="text-[9px] text-muted mb-1">Рейтинг</div>
+                  <div className="text-sm font-bold text-white">4.8 ★</div>
+                  <div className="text-[9px] text-green-400">↑ 0.3</div>
+                </div>
+              </div>
+              {/* Период */}
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[9px] text-muted">Топ товаров за март 2026</span>
+                <span className="text-[9px] text-muted">01.03 — 21.03</span>
               </div>
               {/* Список */}
               <div className="space-y-1.5">
