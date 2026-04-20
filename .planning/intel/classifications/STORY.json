@@ -1,0 +1,22 @@
+{
+  "source_path": "/Users/genlorem/Projects/oborot-crm/STORY.md",
+  "type": "DOC",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "История Оборот — исходник для контента",
+  "summary": "Founder story source material covering origin, pain points with МойСклад/TopSeller, product development path, and key principles behind Оборот.",
+  "scope": [
+    "founder background",
+    "SKVO Clothes brand",
+    "МойСклад pain points",
+    "TopSeller integration issues",
+    "product development journey",
+    "product principles",
+    "emotional content anchors",
+    "target audience (MP sellers)"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": 30,
+  "notes": ""
+}

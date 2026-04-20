@@ -1,0 +1,23 @@
+{
+  "source_path": "/Users/genlorem/Projects/oborot-crm/ROADMAP.md",
+  "type": "PRD",
+  "confidence": "high",
+  "manifest_override": true,
+  "title": "OborotCRM — Roadmap: выход на рынок и первые 5М руб",
+  "summary": "12-месячный go-to-market roadmap для OborotCRM с целью 5М руб выручки: сегменты, тарифы, фазы запуска, бюджет и метрики.",
+  "scope": [
+    "OborotCRM",
+    "позиционирование и бренд",
+    "целевые сегменты (соло, малая команда, агентства)",
+    "тарифная сетка",
+    "финансовая модель MRR/ARR",
+    "фазы go-to-market (0-3)",
+    "маркетинговый бюджет 500к руб",
+    "ключевые метрики",
+    "риски и митигации",
+    "отраслевые модули"
+  ],
+  "cross_refs": [],
+  "locked": false,
+  "precedence": 10
+}
