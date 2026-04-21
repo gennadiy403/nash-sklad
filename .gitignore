@@ -4,3 +4,18 @@ dist
 .env.local
 .vercel
 .next
+
+# OS metadata
+.DS_Store
+**/.DS_Store
+
+# Sentry build artifacts
+.sentry/
+.sentryclirc
+
+# Test output
+coverage/
+
+# IDE
+.vscode/
+.idea/
