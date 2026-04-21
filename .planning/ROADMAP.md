@@ -48,7 +48,7 @@
 - [x] 01-04-PLAN.md — Vitest + RTL: smoke tests + useForm unit coverage + env.test
 - [x] 01-05-PLAN.md — Sentry SDK install + init (both apps, client/server/edge) + console.error migration
 - [x] 01-06-PLAN.md — Shared ESLint v9 flat config with no-console:error enforcing FOUND-05 durability
-- [ ] 01-07-PLAN.md — GitHub Actions CI matrix (lint + test + build) on every PR and push to main
+- [x] 01-07-PLAN.md — GitHub Actions CI matrix (lint + test + build) on every PR and push to main
 - [ ] 01-08-PLAN.md — Cloudflare Pages migration + DNS cutover + Railway decommission
 **UI hint**: yes
 

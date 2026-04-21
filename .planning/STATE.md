@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-06-PLAN.md
-last_updated: "2026-04-21T09:27:00.000Z"
+stopped_at: Completed 01-07-PLAN.md
+last_updated: "2026-04-21T11:18:00.000Z"
 last_activity: 2026-04-21
 progress:
   total_phases: 7
   completed_phases: 0
   total_plans: 8
-  completed_plans: 6
-  percent: 75
+  completed_plans: 7
+  percent: 87
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-04-21)
 ## Current Position
 
 Phase: 01 (Foundation & Repo Cleanup) — EXECUTING
-Plan: 7 of 8
+Plan: 8 of 8
 Status: Ready to execute
 Last activity: 2026-04-21
 
-Progress: [███████░░░] 75%
+Progress: [████████░░] 87%
 
 ## Performance Metrics
 
@@ -58,6 +58,7 @@ Progress: [███████░░░] 75%
 | Phase 01 P04 | 2min | 2 tasks | 12 files |
 | Phase 01 P05 | 4min | 3 tasks (+1 checkpoint deferred) | 14 files |
 | Phase 01 P06 | 8min | 1 task | 3 files |
+| Phase 01 P07 | 4min | 1 task (+1 checkpoint approved) | 1 file |
 
 ## Accumulated Context
 
@@ -95,6 +96,10 @@ Recent decisions affecting current work:
 - Plan 01-06: root `"type": "module"` added so Node resolves eslint.config.js as ESM without MODULE_TYPELESS warning
 - Plan 01-06: react-hooks/purity (new in plugin v7) disabled — only site was Landing.jsx Math.random in useState (Early Bird counter, intentional, scheduled for Phase 2 LEAD-03 server migration)
 - Plan 01-06: no-console: ['error', { allow: ['warn', 'info'] }] live; smoke-tested — any console.error in non-test file under apps/*/src fails lint with clear message
+- Plan 01-07: single CI workflow with matrix app:[landing,app] + fail-fast:false — one merge-gate signal, independent diagnostics
+- Plan 01-07: dummy NEXT_PUBLIC_SUPABASE_ANON_KEY = 43-char string (Zod .min(20) satisfied at next build step); SENTRY_AUTH_TOKEN sourced from repo secret, Vite sentry plugin silent-skips when empty — build never breaks on missing secret
+- Plan 01-07: cache-dependency-path=package-lock.json (root) matches npm workspaces layout; Node 20 on ubuntu-latest
+- Plan 01-07: checkpoint approved — developer set SENTRY_AUTH_TOKEN secret and enabled branch protection on main with required checks test (landing)/test (app)
 
 ### Pending Todos
 
@@ -130,8 +135,8 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-04-21T09:27:00.000Z
-Stopped at: Completed 01-06-PLAN.md
+Last session: 2026-04-21T11:18:00.000Z
+Stopped at: Completed 01-07-PLAN.md
 Resume file: None
 
 **Planned Phase:** 1 (Foundation & Repo Cleanup) — 8 plans — 2026-04-21T05:12:34.537Z
