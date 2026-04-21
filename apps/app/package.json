@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p 3001"
+    "start": "next start -p 3001",
+    "lint": "eslint app lib --max-warnings=0",
+    "test": "vitest run"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
@@ -17,10 +19,16 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "jsdom": "^29.0.2",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.14",
+    "vitest": "^3.2.4"
   }
 }
