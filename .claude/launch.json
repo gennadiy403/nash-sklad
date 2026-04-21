@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "nashsklad-landing",
+      "name": "oborot-landing",
       "cwd": "apps/landing",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],

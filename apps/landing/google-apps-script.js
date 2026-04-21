@@ -1,5 +1,5 @@
 /**
- * НашСклад — Google Apps Script
+ * Оборот — Google Apps Script
  * Принимает два типа данных:
  *   type: 'waitlist' — подписчик с лендинга
  *   type: 'survey'  — заполненная анкета
