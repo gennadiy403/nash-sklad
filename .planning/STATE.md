@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-05-PLAN.md
-last_updated: "2026-04-21T09:14:33.000Z"
+stopped_at: Completed 01-06-PLAN.md
+last_updated: "2026-04-21T09:27:00.000Z"
 last_activity: 2026-04-21
 progress:
   total_phases: 7
   completed_phases: 0
   total_plans: 8
-  completed_plans: 5
-  percent: 63
+  completed_plans: 6
+  percent: 75
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-04-21)
 ## Current Position
 
 Phase: 01 (Foundation & Repo Cleanup) — EXECUTING
-Plan: 6 of 8
+Plan: 7 of 8
 Status: Ready to execute
 Last activity: 2026-04-21
 
-Progress: [██████░░░░] 63%
+Progress: [███████░░░] 75%
 
 ## Performance Metrics
 
@@ -57,6 +57,7 @@ Progress: [██████░░░░] 63%
 | Phase 01 P03 | 4min | 3 tasks tasks | 15 files files |
 | Phase 01 P04 | 2min | 2 tasks | 12 files |
 | Phase 01 P05 | 4min | 3 tasks (+1 checkpoint deferred) | 14 files |
+| Phase 01 P06 | 8min | 1 task | 3 files |
 
 ## Accumulated Context
 
@@ -90,6 +91,10 @@ Recent decisions affecting current work:
 - Plan 01-05: replayIntegration only in client config (browser-only API); server/edge configs omit it
 - Plan 01-05: direct `Sentry.captureException(e, {tags: {op: ...}})` calls — no logger wrapper (5 sites don't justify abstraction per PATTERNS §A)
 - Plan 01-05: grep for `console.error` in source MUST exclude `dist/` and `.next/` — bundled React internals produce false positives; Plan 06 ESLint glob to follow suit
+- Plan 01-06: @eslint/js pin corrected from ^10.0.1 → ^9.38.0 to match eslint@^9.38.0 peerDeps (v10 requires eslint@^10); conventional pairing
+- Plan 01-06: root `"type": "module"` added so Node resolves eslint.config.js as ESM without MODULE_TYPELESS warning
+- Plan 01-06: react-hooks/purity (new in plugin v7) disabled — only site was Landing.jsx Math.random in useState (Early Bird counter, intentional, scheduled for Phase 2 LEAD-03 server migration)
+- Plan 01-06: no-console: ['error', { allow: ['warn', 'info'] }] live; smoke-tested — any console.error in non-test file under apps/*/src fails lint with clear message
 
 ### Pending Todos
 
@@ -125,8 +130,8 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-04-21T09:14:33.000Z
-Stopped at: Completed 01-05-PLAN.md
+Last session: 2026-04-21T09:27:00.000Z
+Stopped at: Completed 01-06-PLAN.md
 Resume file: None
 
 **Planned Phase:** 1 (Foundation & Repo Cleanup) — 8 plans — 2026-04-21T05:12:34.537Z
