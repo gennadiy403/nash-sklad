@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: planning
+stopped_at: Phase 1 context gathered
+last_updated: "2026-04-21T04:06:02.147Z"
+last_activity: 2026-04-21 — GSD roadmap created from intel ingest (14 requirements from ROADMAP.md as PRD, filtered to engineering-only, 35 v1 items).
+progress:
+  total_phases: 7
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
+---
+
 # Project State
 
 ## Project Reference
@@ -19,6 +35,7 @@ Progress: [░░░░░░░░░░] 0%
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 0
 - Average duration: —
 - Total execution time: 0.0 hours
@@ -30,6 +47,7 @@ Progress: [░░░░░░░░░░] 0%
 | — | — | — | — |
 
 **Recent Trend:**
+
 - Last 5 plans: —
 - Trend: — (no data yet)
 
@@ -69,6 +87,7 @@ None yet.
 ### Gaps flagged downstream
 
 Из `.planning/intel/SYNTHESIS.md` — отсутствующие инпуты:
+
 - No SPECs: API-контракты с WB/Ozon/ЯМ, 1С-протокол, analytics retention SLA, billing/Early-Bird enforcement не формализованы. Решаются в Phase 5 и 6 через ADR по ходу планирования.
 - Модульные границы core ↔ industry-modules не специфицированы заранее — решается в ADR в Phase 4.
 
@@ -82,6 +101,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-04-21
-Stopped at: Written `.planning/PROJECT.md`, `.planning/REQUIREMENTS.md`, `.planning/ROADMAP.md`, `.planning/STATE.md`. Ready for `/gsd-plan-phase 1`.
-Resume file: None
+Last session: --stopped-at
+Stopped at: Phase 1 context gathered
+Resume file: --resume-file
